@@ -32,5 +32,5 @@ alink -oPE -subsys console <filename>.obj
 or
 
 ```
-run.bad <filename>
+run.bat <filename>
 ```
