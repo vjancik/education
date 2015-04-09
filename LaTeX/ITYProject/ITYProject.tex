@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage[left=2cm,right=2cm,top=3.5cm]{geometry}
+\usepackage[]{xspace}
+\usepackage[]{verbatim}
+\usepackage{times}
+\providecommand{\uv}[1]{\quotedblbase #1\textquotedblleft}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\newcommand{\latex}{\LaTeX\xspace}
+\author{Viktor Jančík}
+\title{Typografie a publikování 1. projekt}
+%\email{xjanci09@stud.fit.vutbr.cz}
+
+\begin{document}
+
+\twocolumn[
+\begin{center}
+
+{\LARGE Typografie a publikování}
+
+\vspace{0.1cm}
+
+{\LARGE 1.projekt}
+
+\hfill
+
+{\large Viktor Jančík}
+
+{\large xjanci09@stud.fit.vutbr.cz}
+\end{center}
+]
+
+\section{Hladká sazba}
+
+Hladká sazba je sazba z jednoho stupně, druhu a řezu pí­sma sázená na stanovenou šířku odstavce. Skládá se z odstavců, které obvykle začínají­ zarážkou, ale mohou být sázeny i bez zarážky -- rozhodují­cí­ je celková grafická úprava. Odstavce jsou ukončeny východovou řádkou. Věty nesmějí začínat číslicí.
+
+Barevné zvýraznění­, podtrhávání­ slov či různé velikosti písma vybraných slov se zde také nepoužívá. Hladká sazba je určena především pro delší­ texty, jako je napří­klad beletrie. Porušení­ konzistence sazby působí v textu rušivě a unavuje čtenářův zrak.
+
+
+\section{Smíšená sazba}
+
+Smíšená sazba má o něco volnější­ pravidla, jak hladká sazba. Nejčastěji se klasická hladká sazba doplňuje o další řezy pí­sma pro zvýraznění­ důležitých pojmů. Existuje \uv{pravidlo}:
+
+\begin{changemargin}{0.9cm}{0.9cm}
+{\hspace{0.5cm} \textsc{Čí­m ví­ce druhů, řezů, velikostí, barev pí­sma a jiných efektů použijeme, tí­m profesionálněji bude  dokument vypadat. Čtenář tím bude vždy nadšen!}}
+\end{changemargin}
+
+Tí­mto pravidlem se \underline{nikdy} nesmí­te ří­dit. Příliš časté zvýrazňování textových elementů  a změny {\mbox {\Huge V}{\huge E}{\Large L}{\large I}{\normalsize K}{\small O}{\footnotesize S}{\scriptsize T}{\tiny I} \hspace{0.2cm} pí­sma \hspace{0.2cm} {\Large jsou} \hspace{0.2cm} {\LARGE známkou}} \hspace{0.2cm} {\huge amatérismu} \hspace{0.1cm} autora \hspace{0.15cm} a \hspace{0.15cm} působí­  \hspace{0.15cm} \textbf{\textsl{velmi}} \hspace{0.15cm} \textit{rušivě}. Dobře navržený dokument nemá obsahovat ví­ce než 4 řezy či druhy pí­sma. \texttt{Dobře navržený dokument je decentní­, ne chaotický.}	
+
+Důležitým znakem správně vysázeného dokumentu je konzistentní použí­vání­ různých druhů zvýraznění­. To napří­klad může znamenat, že \textbf{tučný řez} pí­sma bude vyhrazen pouze pro klíčová slova, \textit{skloněný řez} pouze pro doposud neznámé pojmy a nebude se to míchat. Skloněný řez nepůsobí­ tak rušivě a používá se častěji. V {\latex}u jej sází­me raději pří­kazem \verb|\emph{text}| než \verb|\textit{text}|.
+
+Smíšená sazba se nejčastěji používá pro sazbu vědeckých článků a technických zpráv. U delší­ch dokumentů vědeckého či technického charakteru je zvykem upozornit čtenáře na význam různých typů zvýraznění­ v úvodní­ kapitole.
+
+\section{České odlišnosti}
+
+Česká sazba se oproti okolní­mu světu v některých aspektech mí­rně liší­. Jednou z odlišností je sazba uvozovek. Uvozovky se v češtině použí­vají­ převážně pro zobrazení­ pří­mé řeči. V menší­ míře se použí­vají­ také pro zvýraznění­ přezdí­vek a ironie. V češtině se použí­vá tento \uv{typ uvozovek} namísto anglických ``uvozovek".
+
+Ve smíšené sazbě se řez uvozovek ří­dí­ řezem první­ho uvozovaného slova. Pokud je uvozována celá věta, sází­ se koncová tečka před uvozovku, pokud se uvozuje slovo nebo část věty, sází­ se tečka za uvozovku.
+
+Druhou odlišností je pravidlo pro sázení­ konců řádků. V české sazbě by řádek neměl končit osamocenou jednopí­smennou předložkou nebo spojkou (spojkou \uv{a} končit může při sazbě do 25 liter). Abychom {\latex}u zabránili v sázení­ osamocených předložek, vkládáme mezi předložku a slovo nezlomitelnou mezeru znakem \hspace{0.1cm} \textasciitilde \hspace{0.1cm} (vlnka, tilda). Pro automatické doplnění vlnek slouží­ volně šiřitelný program \hspace{0.1cm} \textit{vlna} od pana Olšáka\footnote{Viz ftp://math.feld.cvut.cz/pub/olsak/vlna/.}.
+
+\end{document}
