@@ -1,8 +1,0 @@
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\bin\Debug\Matching Game.exe.config
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\bin\Debug\Matching Game.exe
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\bin\Debug\Matching Game.pdb
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\obj\Debug\Matching Game.csprojResolveAssemblyReference.cache
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\obj\Debug\Matching_Game.Properties.Resources.resources
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\obj\Debug\Matching Game.csproj.GenerateResource.Cache
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\obj\Debug\Matching Game.exe
-c:\users\vix\documents\visual studio 2015\Projects\Matching Game\Matching Game\obj\Debug\Matching Game.pdb

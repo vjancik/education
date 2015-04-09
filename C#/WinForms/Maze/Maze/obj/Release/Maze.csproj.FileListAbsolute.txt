@@ -1,7 +1,0 @@
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\bin\Release\Maze.exe.config
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\bin\Release\Maze.exe
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\bin\Release\Maze.pdb
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Release\Maze.Properties.Resources.resources
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Release\Maze.csproj.GenerateResource.Cache
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Release\Maze.exe
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Release\Maze.pdb

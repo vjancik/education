@@ -1,8 +1,0 @@
-c:\users\vix\documents\visual studio 2015\Projects\Maze\Maze\bin\Debug\Maze.exe.config
-c:\users\vix\documents\visual studio 2015\Projects\Maze\Maze\obj\Debug\Maze.csprojResolveAssemblyReference.cache
-c:\users\vix\documents\visual studio 2015\Projects\Maze\Maze\obj\Debug\Maze.Properties.Resources.resources
-c:\users\vix\documents\visual studio 2015\Projects\Maze\Maze\obj\Debug\Maze.csproj.GenerateResource.Cache
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\bin\Debug\Maze.exe
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\bin\Debug\Maze.pdb
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Debug\Maze.exe
-C:\Users\Vix\Documents\Visual Studio 2015\Projects\Maze\Maze\obj\Debug\Maze.pdb
