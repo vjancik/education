@@ -6,6 +6,10 @@ School projects I completed in LaTex.
 
 ###ITO
 
+Circuit theory homework submitted in LaTeX for extra points.
+
+###IUS
+
 C program documentation written in LaTeX. The program the documentation is intended for can be found at [C/IZPProject2](https://github.com/Vixian/education/tree/master/C/IZPProject2).
 
 ###ITY

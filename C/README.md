@@ -4,7 +4,7 @@
 
 **IZPProject1**: Specification inside.
 
-**IZPProject2**: Specification inside, full documentation available at [LaTeX/ITOProject](https://github.com/Vixian/education/tree/master/LaTeX/ITOProject).
+**IZPProject2**: Specification inside, full documentation available at [LaTeX/IUSProject](https://github.com/Vixian/education/tree/master/LaTeX/IUSProject).
 
 **IZPProject3**: Specification inside.
 

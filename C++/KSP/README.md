@@ -10,4 +10,25 @@
 
 **Life Insurance**: Unfortunatelly, I can no longer find or access the original assignment specification.
 
-**Snowflake**: This one should print a pretty snowflake.
+**Snowflake**: This one should print a  snowflake.
+
+**Sample Input**
+
+```
+5 5 1
+. . . . .
+. . . . .
+. . # . .
+. . . . .
+. . . . .
+```
+
+**Sample Output**
+
+```
+.....
+.###.
+.###.
+.###.
+.....
+```
