@@ -2,34 +2,66 @@
 
 All the C++ projects and little scripts I have programmed over the years. Some of the files here are quite old.
 
-**BinaryTree**: A little script that prints out a binary tree to the console in a nice, spaced form. I forgot how to set the arguments for a larger tree.
+**BinaryTree (Q4 2012)**
 
-**Brackets**: A program that checks bracket completeness of the input string. The first argument it expects is the number of strings you are going to input. Then the strings themselves. Supported brackets: {},(),[]
+A little script that prints out a binary tree to the console in a nice, spaced form. I forgot how to set the arguments for a larger tree.
 
-**CodeChef**: A few easy problems I solved for the [CodeChef](http://www.codechef.com/) online judge when checking it out.
+**Brackets (Q3 2012)**
 
-**Combinations**: A program that prints out and counts all the possible Combinations of N numbers. Use a small number. It scales very fast.
+A program that checks bracket completeness of the input string. The first argument it expects is the number of strings you are going to input. Then the strings themselves. Supported brackets: {},(),[]
 
-**Crypto**: An encryption and decryption program that encrypts a text file by inverting all the bits byte by byte, then reverses the process on decryption.
+**CodeChef (Q3 2012-13)**
 
-**DisplayImage**: An image viewer I wrote when I was playing with the OpenCV library.
+A few easy problems I solved for the [CodeChef](http://www.codechef.com/) online judge when checking it out.
 
-**FullScreenConsole**: Long time ago I had the problem of being unable to make my console window go fullscreen on Windows. I wrote a script that implemented this. I am not sure if it works anymore.
+**Combinations (Q3 2012)**
 
-**KSP**: A few algorithmic problems I solved for a high school programming competition, that serves as a preparation for the programming olympiad.
+A program that prints out and counts all the possible Combinations of N numbers. Use a small number. It scales very fast.
 
-**Primes**: A bruteforce implementation of a prime generation algorithm. I programmed it as a benchmarking tool.
+**Crypto (Q4 2012)**
 
-**ProgConfAlgo**: A few algorithmic problems I solved at a three day joint math/physics/programming event that served as a preparation for the programming olympiad.
+An encryption and decryption program that encrypts a text file by inverting all the bits byte by byte, then reverses the process on decryption.
 
-**ProgOlympiad2013**: This folder contains the problems I solved for the 2013 Programming Olympiad in which I managed to ascend to the national round.
+**DisplayImage (Q1 2014)**
 
-**SDL**: A few small applications I created when testing out the SDL library. I never got to making a full fledged game.
+An image viewer I wrote when I was playing with the OpenCV library.
 
-**SKDict**: A little script I wrote because I had the problem of finding a Slovak language dictionary for bruteforcing without accents. I found one that was accented, cleaned it and created both a lowercase and a non case sensitive version.
+**FullScreenConsole (Q4 2012)**
 
-**Tic-Tac-Toe**: The first program I wrote in C++. It is the direct port of the Tic-Tac-Toe I wrote in Pascal as an attempt to become language independent. It should still work.
+Long time ago I had the problem of being unable to make my console window go fullscreen on Windows. I wrote a script that implemented this. I am not sure if it works anymore.
 
-**VideoPlayer**: A simple video player application that reads from an online stream, but can also read from a file. It uses the OpenCV library.
+**KSP (Q3-4 2012)**
 
-**somnerBlink**: A simulation of an [EVE Online lottery](https://cogdev.net/blink/) I wrote because I was trying to maximize my winnings. The simulation concluded that the lottery is set so the house always wins. :)
+A few algorithmic problems I solved for a high school programming competition, that serves as a preparation for the programming olympiad.
+
+**Primes (Q2 2014)**
+
+A bruteforce implementation of a prime generation algorithm. I programmed it as a benchmarking tool.
+
+**ProgConfAlgo (Q4 2014)**
+
+A few algorithmic problems I solved at a three day joint math/physics/programming event that served as a preparation for the programming olympiad.
+
+**ProgOlympiad2013 (Q4 2014)**
+
+This folder contains the problems I solved for the 2013 Programming Olympiad in which I managed to ascend to the national round.
+
+**SDL (Q3 2014)**
+
+A few small applications I created when testing out the SDL library. I never got to making a full fledged game.
+
+**SKDict (Q2 2014)**
+
+A little script I wrote because I had the problem of finding a Slovak language dictionary for bruteforcing without accents. I found one that was accented, cleaned it and created both a lowercase and a non case sensitive version.
+
+**Tic-Tac-Toe (Q4 2011)**
+
+The first program I wrote in C++. It is the direct port of the Tic-Tac-Toe I wrote in Pascal as an attempt to become language independent. It should still work.
+
+**VideoPlayer (Q2 2014)**
+
+A simple video player application that reads from an online stream, but can also read from a file. It uses the OpenCV library.
+
+**somnerBlink (Q2 2013)**
+
+A simulation of an [EVE Online lottery](https://cogdev.net/blink/) I wrote because I was trying to maximize my winnings. The simulation concluded that the lottery is set so the house always wins. :)

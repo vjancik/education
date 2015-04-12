@@ -49,8 +49,8 @@ In this problem, we will not be dealing with a minimum monthly payment rate.
 
 The following variables contain values as described below:
 
-1. balance - the outstanding balance on the credit card
-2. annualInterestRate - annual interest rate as a decimal
+1. `balance` - the outstanding balance on the credit card
+2. `annualInterestRate` - annual interest rate as a decimal
 
 The program should print out one line: the lowest monthly payment that will pay off all debt in under 1 year, for example:
 

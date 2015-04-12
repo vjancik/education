@@ -26,7 +26,7 @@ Write a program that prints the number of times the string `'bob'` occurs in `s`
 Number of times bob occurs is: 2
 ```
 
-**File**: countBob.py
+**File**: `countBob.py`
 
 ##Alphabetical substrings
 
@@ -46,4 +46,4 @@ In the case of ties, print the first substring. For example, if `s = 'abcbcd'`, 
 Longest substring in alphabetical order is: abc
 ```
 
-**File**: longestSubstring.py
+**File**: `longestSubstring.py`

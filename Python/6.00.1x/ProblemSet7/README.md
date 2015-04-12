@@ -98,6 +98,6 @@ We have implemented the function `readTriggerConfig(filename)` for you. We've wr
 
 Implement the function `makeTrigger(triggerMap, triggerType, params, name)`. This helper function should build and return a trigger depending on its type. It also keeps track of triggers and names in a map.
 
-**Classes I implemented**: NewsStory, WordTrigger, TitleTrigger, SubjectTrigger, SummaryTrigger, NotTrigger, AndTrigger, OrTrigger, PhraseTrigger
+**Classes I implemented**: `NewsStory`, `WordTrigger`, `TitleTrigger`, `SubjectTrigger`, `SummaryTrigger`, `NotTrigger`, `AndTrigger`, `OrTrigger`, `PhraseTrigger`
 
-**Functions I implemented**: filterStories, makeTrigger
+**Functions I implemented**: `filterStories`, `makeTrigger`
