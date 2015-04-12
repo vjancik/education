@@ -1,7 +1,5 @@
 # Education
 
-Anything and everything I have coded and felt like sharing.
-
 **DISCLAIMER**: Many of the code files inside this repository are old, uncommented and weren’t ment for outside evaluation. Please take that into consideration.
 
 *Note: The language percentages are off because Python has a lot of skeleton code I didn’t write.*
