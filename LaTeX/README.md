@@ -14,6 +14,6 @@ Projects from a LaTeX subject at my university.
 
 Each assignment targets a different set of features of the LaTeX language.
 
-The goal of each assignment is to recreate a LaTex generated `project\<number\>Template.pdf` document as closely as possible.
+The goal of each assignment is to recreate a LaTex generated `project<number>Template.pdf` document as closely as possible.
 
 Each folder contains the template, my generated `.pdf` file, the required `.tex` files and a Makefile.
