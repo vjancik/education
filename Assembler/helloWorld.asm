@@ -1,28 +1,15 @@
-;**************************************************************
-;
-; Ukazkovy program -- IAS 2012/2013, FIT VUT Brno
-;
-;**************************************************************
-; Preklad programu lze provest nasledovne:
-;   nasm -fobj hello.asm
-;   alink -oPE -subsys console hello.obj
-; nebo pouze:
-;   run.bat hello
-;**************************************************************
+%include 'rw32.inc'     ; loads the library rw32.inc
 
-%include 'rw32.inc'     ; natazeni knihovny rw32.inc
-
-[segment .data use32]   ; definice zacatku datoveho segmentu
+[segment .data use32]   ; defines the start of the data segment
   
-; testovaci retezec
 sMessage db  "Hello World!",10,13,0
   
-[segment .code use32]   ; definice zacatku kodoveho segementu
+[segment .code use32]   ; defines the start of the code segment
                         
-prologue                ; makro -- inicializace programu
+prologue                ; program initialization macro
   
   ; vlastni program
   mov  esi,sMessage     
   call WriteString
 
-epilogue                ; makro -- ukonceni programu
+epilogue                ; program end macro

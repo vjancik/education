@@ -1,5 +1,7 @@
 #C projects
 
+**CUDA**: Nvidia CUDA projects
+
 **IJCProject**: Specification inside.
 
 **IZPProject1**: Specification inside.

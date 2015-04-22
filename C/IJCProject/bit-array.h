@@ -6,13 +6,6 @@ typedef unsigned long* BitArray_t;
 #define ULONG_BITS sizeof(unsigned long)*8
 #define TYPE_BITS(name) sizeof((name))*8
 
-#define DU1_SET_BIT(name, index, value) \
-    if((value)) \
-        (name)[(index+TYPE_BITS((name)))/(TYPE_BITS((name))))] |= (typeof((name)))(1<<(index+TYPE_BITS((name)))%(TYPE_BITS((name)))); \
-    else \
-        (name)[(index+TYPE_BITS((name)))/(TYPE_BITS((name)))] &= (typeof((name))(~(1<<((index+TYPE_BITS((name)))%(TYPE_BITS((name)))))));
-#define DU1_GET_BIT(name, index) (((name)[(index+TYPE_BITS((name)))/(TYPE_BITS((name))))]>>((index+TYPE_BITS((name)))(TYPE_BITS((name))))&1)
-
 #define BA_create(name, size) unsigned long (name)[((size) + ULONG_BITS - 1)/(ULONG_BITS) + 1] = {(size)};
 
 #ifndef USE_INLINE
