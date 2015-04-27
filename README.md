@@ -9,8 +9,8 @@
 1. `C/IOSProject2`
 2. `C/IJCProject2`
 3. `Bash/wedi`
-4. `C/IJCProject`
-5. `LaTeX/ITY*`
+4. `C/IVSProject2`
+5. `C/IJCProject`
 
 ###Oldest
 
@@ -22,7 +22,9 @@
 
 1. `C#/WinForms/Maze`
 2. `C++/Tic-Tac-Toe`
-3. `Python/6.00.1x/ProblemSet7`
+3. `IVS-Calculator` [Separate repository](https://github.com/Vixian/IVS-Calculator)
+4. `C/IVSProject2`
+5. `Python/6.00.1x/ProblemSet7`
 
 ###Most algorithmically challenging
 

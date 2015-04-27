@@ -1,0 +1,4 @@
+http://example.com/
+https://example.org/
+http://example.net/
+http://example.edu/
