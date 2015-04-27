@@ -4,6 +4,8 @@
 
 **IJCProject**: Specification inside.
 
+**IJCProject2**: Specification inside.
+
 **IZPProject1**: Specification inside.
 
 **IZPProject2**: Specification inside, full documentation available at [LaTeX/IUSProject](https://github.com/Vixian/education/tree/master/LaTeX/IUSProject).

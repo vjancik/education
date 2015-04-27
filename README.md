@@ -6,11 +6,11 @@
 
 ###Newest
 
-1. `C/IJCProject`
-2. `LaTeX/ITY*`
-3. `Ruby/IVSProject1`
-4. `C/IZPProject*`
-5. `Assembler`
+1. `C/IOSProject2`
+2. `C/IJCProject2`
+3. `Bash/wedi`
+4. `C/IJCProject`
+5. `LaTeX/ITY*`
 
 ###Oldest
 
@@ -35,9 +35,10 @@
 ###Most robust implementation
 
 1. `Python/6.00.1x/ProblemSet7`
-2. `C/IJCProject`
-3. `Python/6.00.1x`
-4. `C/IZPProject*`
+2. `C/IOSProject2`
+3. `C/IJCProject`
+4. `Python/6.00.1x`
+5. `Bash/wedi`
 
 ###Best documentation
 

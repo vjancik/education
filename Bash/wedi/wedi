@@ -1,0 +1,184 @@
+#!/bin/bash
+
+if  [ -z $EDITOR ] && [ -z $VISUAL ]; then
+    echo 'Missing both environment variables $EDITOR and $VISUAL.' >&2
+    exit 1
+elif [ -z $WEDI_RC ]; then
+    echo 'Missing environment variable $WEDI_RC.' >&2
+    exit 1
+fi
+
+declare -i mArg=1
+declare -i lArg=1
+declare -i bArg=1
+declare -i aArg=1
+DATE=''
+FILE=''
+MOST_FREQ=''
+
+function getDate() {
+    DATE=$(echo $OPTARG | sed -n '/[0-9]\{4\}-[01][0-9]-[0-3][0-9]$/p')
+    DATE=`date -d $DATE +%Y-%m-%d 2> /dev/null`
+    if [ -z $DATE ]; then
+        echo 'Invalid date format, use format: YYYY-MM-DD.' >&2
+        exit 1
+    fi
+}
+
+function printFiles() {
+    for file in `grep "$1"/[^/]*\$ "$WEDI_RC" | cut -c12- | sort |  uniq `; do
+        if [ -f $file ]; then
+            echo `echo $file | grep -o '[^/]*$'`
+        fi
+    done
+}
+
+function mostFrequent() {
+    for file in `grep "$FILE"/[^/]*\$ "$WEDI_RC" | cut -c12- | sort | uniq -c | sort -nr | cut -c9- `; do
+        if [ -f $file ]; then
+            MOST_FREQ=$file
+            break
+        fi
+    done
+}
+
+function printFilesAfter() {
+    local AFTER=$(date -d $1 +"%Y%m%d")
+    for dateVar in `grep "$FILE"/[^/]*\$ "$WEDI_RC" | cut -c1-10 | uniq`; do
+        if [ $(date -d $dateVar +"%Y%m%d") -ge $AFTER ]; then
+            AFTER=$dateVar
+            break
+        fi
+    done
+    local LINENUM=`cat "$WEDI_RC" | grep -n $AFTER | head -n1 | grep -o '^[^:]*'`
+    if [ -z $LINENUM ]; then
+        exit 1
+    fi
+    echo "`tail -n +$LINENUM $WEDI_RC | grep "$FILE"/[^/]*\$ | cut -c12- | sort | uniq | grep -o '[^/]*$'`"
+}
+
+function printFilesBefore() {
+    local BEFORE=$(date -d $1 +"%Y%m%d")
+    for dateVar in `grep "$FILE"/[^/]*\$ "$WEDI_RC" | cut -c1-10 | sort -r | uniq`; do
+        if [ $(date -d $dateVar +"%Y%m%d") -le $BEFORE ]; then
+            BEFORE=$dateVar
+            break
+        fi
+    done
+
+    local LINENUM=`cat "$WEDI_RC" | grep -n $BEFORE | sort -r | head -n1 | grep -o '^[^:]*'`
+    if [ -z $LINENUM ]; then
+        exit 1
+    fi
+    echo "`head -n +$LINENUM $WEDI_RC | grep "$FILE"/[^/]*\$ | cut -c12- | sort | uniq | grep -o '[^/]*$'`"
+}
+
+function lastFile() {
+    for file in `grep "$1"/[^/]*\$ "$WEDI_RC" | tac | cut -c12- | uniq`; do
+        FILE=$file
+        if [ -f $FILE ]; then
+            break
+        fi
+    done
+    if [ -z $FILE ] || [ ! -f $FILE ]; then
+        return 1
+    fi
+    return 0
+}
+
+if getopts :mlb:a: opt; then
+    case $opt in
+        m)
+            mArg=0
+            ;;
+        l)
+            lArg=0
+            ;;
+        b)
+            getDate
+            bArg=0
+            ;;
+        a)
+            getDate
+            aArg=0
+            ;;
+        :)
+            echo 'Missing argument.' >&2
+            exit 1
+            ;;
+        \?)
+            echo 'Invalid argument combination.' >&2
+            exit 1
+            ;;
+    esac
+fi
+
+MY_EDITOR=$EDITOR
+if [ -z $MY_EDITOR ]; then MY_EDITOR=$VISUAL; fi
+
+
+shift $((OPTIND-1))
+FILE=$1
+IFS=$'\n'
+if [ -d $FILE ]; then
+    FILE="`readlink -f "$FILE"`"
+    if [ $mArg -eq 1 ] && [ $lArg -eq 1 ] && [ $bArg -eq 1 ] && [ $aArg -eq 1 ]; then
+        lastFile $FILE
+        if [ $? -eq 0 ]; then
+            $MY_EDITOR $FILE
+            if [ $? -eq 0 ]; then
+                echo "$(date +"%Y-%m-%d") "$FILE"" >>$WEDI_RC
+            fi
+            exit $?
+        else
+            echo 'You haven'\''t edited any existing files before in this directory.' >&2
+            exit 1
+        fi
+    elif [ $mArg -eq 0 ]; then
+        mostFrequent "$FILE"
+        if [ ! -z $MOST_FREQ ]; then
+            $MY_EDITOR $MOST_FREQ
+            if [ $? -eq 0 ]; then
+                echo "$(date +"%Y-%m-%d") "$MOST_FREQ"" >>$WEDI_RC
+            fi
+            exit $?
+        else
+            echo 'You haven'\''t edited any existing files before in this directory.' >&2
+            exit 1
+        fi
+    elif [ $lArg -eq 0 ]; then
+        printFiles "$FILE"
+    elif [ $bArg -eq 0 ]; then
+        printFilesBefore $DATE
+    elif [ $aArg -eq 0 ]; then
+        printFilesAfter $DATE
+    fi
+elif [ -f $FILE ]; then
+    FILE="`readlink -f "$FILE"`"
+    if [ $mArg -eq 1 ] && [ $lArg -eq 1 ] && [ $bArg -eq 1 ] && [ $aArg -eq 1 ]; then
+        $MY_EDITOR $FILE
+        if [ $? -eq 0 ]; then
+            echo "$(date +"%Y-%m-%d") "$FILE"" >>$WEDI_RC
+        fi
+        exit $?
+    else
+        echo 'Invalid combination.' >&2
+    fi
+elif [ -z $FILE ]; then
+    lastFile "`pwd`"
+    if [ $? -eq 0 ]; then
+        $MY_EDITOR $FILE
+        if [$? -eq 0 ]; then
+            echo "$(date +"%Y-%m-%d") "$FILE"" >>$WEDI_RC
+        fi
+        exit $?
+    else
+        echo 'You haven'\''t edited any existing files before in this directory.' >&2
+        exit 1
+    fi
+else
+    echo 'Neither file nor directory.' >&2
+    exit 1
+fi
+
+exit 0
