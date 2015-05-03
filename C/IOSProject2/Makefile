@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=gnu99 -Wall -Wextra
+CFLAGS = -std=gnu99 -Wall -Wextra -Werror -pedantic
 DBGFLAGS = -g
 LDLIBS = -pthread
 
@@ -15,13 +15,13 @@ h2o : $(OBJ)
 .PHONY: clean test pack debug remake
 
 clean:
-	rm -f h2o *.o h2o.out
+	rm -f h20 *.o xlogin.zip h2o.out
 
 test:
 	./check-syntax.sh
 
 pack:
-	zip *.c *.h Makefile
+	zip xlogin.zip *.c *.h Makefile
 
 debug: CFLAGS += $(DBGFLAGS)
 debug: remake

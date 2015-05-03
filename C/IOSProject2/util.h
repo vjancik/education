@@ -13,6 +13,10 @@
 #include <string.h>
 #include <errno.h>
 
+//macro to deal with "unused parameter" warning in signal handling function
+#define UNUSED(x) (void)(x)
+
+//main process PID
 pid_t parent_pid;
 
 void perror_exit(char *s);

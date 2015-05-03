@@ -3,18 +3,21 @@
 
 #include "util.h"
 
+//shared data structure
 typedef struct {
     sem_t *outputMutex;
-    sem_t *oxyQueue;
-    sem_t *hydroQueue;
-    sem_t *readMutex;
+    sem_t *oxyQueue; //oxygen bonding queue
+    sem_t *hydroQueue; //hydrogen bonding queue
+    sem_t *readMutex; //mutex for reading counters
+    //bond barrier semaphores
     sem_t *bondTurnstile;
     sem_t *bondTurnstile2;
     sem_t *bondMutex;
+    //end barrier semaphores
     sem_t *endTurnstile;
     sem_t *endTurnstile2;
     sem_t *endMutex;
-    sem_t *finishedCountMutex;
+
     long oxyID;
     long hydroID;
     long oxyReady;

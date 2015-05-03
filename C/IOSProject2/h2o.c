@@ -22,9 +22,11 @@ int main(int argc, const char *argv[])
     pid_t pid;
     parent_pid = getpid();
 
+    //shared memory allocation
     if((shmid = shmget(IPC_PRIVATE, sizeof(Shared), IPC_CREAT | 0666)) < 0)
         perror_exit("shmget");
 
+    //attaching shared memory to process
     if((shm = shmat(shmid, NULL, 0)) == (void *) -1)
         perror_exit("shmat");
 
@@ -33,11 +35,13 @@ int main(int argc, const char *argv[])
 
     make_shared(shm, options[0], options[1], options[2], options[3]);
 
+    //signal handling function assignment
     signal(SIGINT, error_signal_handler);
     signal(SIGUSR1, error_signal_handler);
 
     int genCounter=0;
 
+    //forking of the generators
     for(int i = 0; i<2; ++i) {
         pid = fork();
         if(pid < 0)
@@ -58,6 +62,7 @@ int main(int argc, const char *argv[])
         ++genCounter;
     }
 
+    //waiting for all child processes to finish
     int finishCount=0;
     while(wait(NULL)) {
         if(errno == ECHILD)
@@ -65,9 +70,12 @@ int main(int argc, const char *argv[])
         ++finishCount;
     }
 
+    //closing output file
     fclose(shm->outputFile);
+    //closing semaphores
     close_semaphores(shm);
 
+    //detaching and deallocating shared memory
     shmdt((void *)shm);
     shmctl(shmid, IPC_RMID, NULL);
     return 0;

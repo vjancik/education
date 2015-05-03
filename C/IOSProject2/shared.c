@@ -1,5 +1,6 @@
 #include "shared.h"
 
+//shared memory initialization function
 void make_shared(Shared* shm, long atomNum, int hydroGenTime, int oxyGenTime, int bondTime) {
     shm->outputMutex = make_semaphore("/outputMutex",1);
 
@@ -29,7 +30,7 @@ void make_shared(Shared* shm, long atomNum, int hydroGenTime, int oxyGenTime, in
     shm->bondCounter = 0;
     shm->endCounter = 0;
 
-    shm->outputFile = fopen("h2o.out", "w");
+    shm->outputFile = fopen("h2o.out", "w"); //output file
 }
 
 void close_semaphores() {

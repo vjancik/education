@@ -1,6 +1,7 @@
 #include "atom.h"
 
 void barrier_phase1(sem_t *mutex, sem_t *turnstile, sem_t *turnstile2, long *counter, long size) {
+    //first stage of the barrier as described in the Little Book of Semaphores
     sem_wait(mutex);
     ++(*counter);
     if(*counter==size) {
@@ -13,7 +14,8 @@ void barrier_phase1(sem_t *mutex, sem_t *turnstile, sem_t *turnstile2, long *cou
     sem_signal(turnstile);
 }
 
-void barrier_phase2(sem_t *mutex, sem_t *turnstile, sem_t* turnstile2, long *counter, long size) {
+void barrier_phase2(sem_t *mutex, sem_t *turnstile, sem_t* turnstile2, long *counter) {
+    //second stage of the barrier as described in the Little Book of Semaphores
     sem_wait(mutex);
     --(*counter);
     if(*counter==0) {
@@ -27,10 +29,12 @@ void barrier_phase2(sem_t *mutex, sem_t *turnstile, sem_t* turnstile2, long *cou
 }
 
 void output_status(Shared *shm, long *id, status_t status, atom_t atom) {
+    //function for writing output to a file
     sem_wait(shm->outputMutex);
     char atomChar = 'H';
     if(atom==OXYGEN) atomChar = 'O';
     FILE *file = shm->outputFile;
+    //enumeration of all possible outputs, as states of the atom
     switch(status) {
         case STARTED:
             if(atom==HYDROGEN) {
@@ -67,6 +71,7 @@ void output_status(Shared *shm, long *id, status_t status, atom_t atom) {
 }
 
 void oxygen_logic(Shared *shm) {
+    //main oxygen atom logic function
     long atomID;
     output_status(shm, &atomID, STARTED, OXYGEN);
 
@@ -85,21 +90,23 @@ void oxygen_logic(Shared *shm) {
     }
 
     sem_wait(shm->oxyQueue);
-    //bond
+    //bonding stage
     output_status(shm, &atomID, BEGIN_B, OXYGEN);
     usleep(random_interval(shm->bondTime));
 
     barrier_phase1(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter), 3);
     output_status(shm, &atomID, END_B, OXYGEN);
-    barrier_phase2(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter), 3);
+    barrier_phase2(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter));
 
     sem_signal(shm->readMutex);
 
+    //end barrier
     barrier_phase1(shm->endMutex, shm->endTurnstile, shm->endTurnstile2, &(shm->endCounter), 3*(shm->atomNum));
     output_status(shm, &atomID, FINISHED, OXYGEN);
 }
 
 void hydrogen_logic(Shared *shm) {
+    //main hydrogen atom logic function
     long atomID;
     output_status(shm, &atomID, STARTED, HYDROGEN);
 
@@ -118,14 +125,15 @@ void hydrogen_logic(Shared *shm) {
     }
 
     sem_wait(shm->hydroQueue);
-    //bond
+    //bonding stage
     output_status(shm, &atomID, BEGIN_B, HYDROGEN);
     usleep(random_interval(shm->bondTime));
 
     barrier_phase1(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter), 3);
     output_status(shm, &atomID, END_B, HYDROGEN);
-    barrier_phase2(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter), 3);
+    barrier_phase2(shm->bondMutex, shm->bondTurnstile, shm->bondTurnstile2, &(shm->bondCounter));
 
+    //end barrier
     barrier_phase1(shm->endMutex, shm->endTurnstile, shm->endTurnstile2, &(shm->endCounter), 3*(shm->atomNum));
     output_status(shm, &atomID, FINISHED, HYDROGEN);
 }

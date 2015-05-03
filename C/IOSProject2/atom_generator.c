@@ -1,5 +1,6 @@
 #include "atom_generator.h"
 
+//oxygen generator main logic function
 void generate_oxygen(Shared *shm) {
     pid_t pid;
     srand(time(NULL));
@@ -15,7 +16,7 @@ void generate_oxygen(Shared *shm) {
     }
 }
 
-
+//hydrogen generator main logic function
 void generate_hydrogen(Shared *shm) {
     pid_t pid;
     srand(time(NULL));
