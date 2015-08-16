@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string lowercaseacc	   = "áäčďéíĺľňóôöŕšťúýž";
+string lowercaseacc    = "áäčďéíĺľňóôöŕšťúýž";
 string uppercaseacc    = "ÁÄČĎÉÍĹĽŇÓÔÖŔŠŤÚÝŽ";
 string lowercasedeacc  = "aacdeillnooorstuyz";
 string uppercasedeacc  = "AACDEILLNOOORSTUYZ";

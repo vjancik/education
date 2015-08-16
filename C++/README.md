@@ -2,10 +2,6 @@
 
 All the C++ projects and little scripts I have programmed over the years. Some of the files here are quite old.
 
-**BinaryTree (Q4 2012)**
-
-A little script that prints out a binary tree to the console in a nice, spaced form. I forgot how to set the arguments for a larger tree.
-
 **Brackets (Q3 2012)**
 
 A program that checks bracket completeness of the input string. The first argument it expects is the number of strings you are going to input. Then the strings themselves. Supported brackets: {},(),[]
@@ -24,29 +20,29 @@ An encryption and decryption program that encrypts a text file by inverting all 
 
 **DisplayImage (Q1 2014)**
 
-An image viewer I wrote when I was playing with the OpenCV library.
+An image viewer I wrote when I was playing with the OpenCV library. It's not compatible with new OpenCV 3.
 
 **FullScreenConsole (Q4 2012)**
 
-Long time ago I had the problem of being unable to make my console window go fullscreen on Windows. I wrote a script that implemented this. I am not sure if it works anymore.
+Long time ago I had the problem of being unable to make my console window go fullscreen on Windows. I wrote a script that implemented this. I am not sure if it works anymore but if it does, it should also print random green characters forever in your terminal (Matrix style).
 
 **KSP (Q3-4 2012)**
 
-A few algorithmic problems I solved for a high school programming competition, that serves as a preparation for the programming olympiad.
+A few algorithmic problems I solved for a high school programming competition, that served as a preparation for the programming olympiad.
 
 **Primes (Q2 2014)**
 
 A bruteforce implementation of a prime generation algorithm. I programmed it as a benchmarking tool.
 
-**ProgConfAlgo (Q4 2014)**
+**ProgConfAlgo (Q4 2012)**
 
 A few algorithmic problems I solved at a three day joint math/physics/programming event that served as a preparation for the programming olympiad.
 
-**ProgOlympiad2013 (Q4 2014)**
+**ProgOlympiad2013 (Q4 2012)**
 
 This folder contains the problems I solved for the 2013 Programming Olympiad in which I managed to ascend to the national round.
 
-**SDL (Q3 2014)**
+**SDL (Q3 2013)**
 
 A few small applications I created when testing out the SDL library. I never got to making a full fledged game.
 

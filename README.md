@@ -22,7 +22,7 @@
 
 1. `C#/WinForms/Maze`
 2. `C++/Tic-Tac-Toe`
-3. `IVS-Calculator` [Separate repository](https://github.com/Vixian/IVS-Calculator)
+3. `Python/PHPDeobfuscator`
 4. `C/IVSProject2`
 5. `Python/6.00.1x/ProblemSet7`
 

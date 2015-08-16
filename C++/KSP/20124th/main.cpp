@@ -4,16 +4,16 @@
 
 using namespace std;
 
-vector<vector<int> > pole;
+vector<vector<int> > field;
 unsigned int t;
 void init(){
 	unsigned int n=0;
 	unsigned int x,k,p;
 	scanf("%u %u %u", &k,&p,&t);
-	pole.resize(p);
+	field.resize(p);
 	while(n<k) {
 		scanf("%u", &x);
-		pole[0].push_back(x);
+		field[0].push_back(x);
 		n++;
 	}
 }
@@ -26,12 +26,12 @@ int main(){
 		if(ti==0)continue;
 		--pi;
 		piti=pi+ti;
-		it2=find(pole[pi].begin(),pole[pi].end(),ki);
-		pole[piti].insert(pole[piti].end(), it2, pole[pi].end());
-		it2=find(pole[pi].begin(),pole[pi].end(),ki);
-		pole[pi].erase(it2,pole[pi].end());
+		it2=find(field[pi].begin(),field[pi].end(),ki);
+		field[piti].insert(field[piti].end(), it2, field[pi].end());
+		it2=find(field[pi].begin(),field[pi].end(),ki);
+		field[pi].erase(it2,field[pi].end());
 	}
-	for(vector<vector<int> >::iterator it=pole.begin();it!=pole.end();++it){
+	for(vector<vector<int> >::iterator it=field.begin();it!=field.end();++it){
 		if(it->empty()){
 			printf("0\n");
 		}

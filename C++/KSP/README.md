@@ -6,11 +6,11 @@
 
 **20124th**: The goal is to implement a game of turtles, where the turtles move around a board and can stack upon each other and when one turtle moves, all the turtles above it move as well.
 
-*Note: With each of these assignments there is a .pdf document that contains my description of the implementation as required by competition for submission.*
+*Note: With each of these assignments there is a .pdf document that contains my description of the implementation as required by competition for submission in slovak langauge.*
 
 **Life Insurance**: Unfortunatelly, I can no longer find or access the original assignment specification.
 
-**Snowflake**: This one should print a  snowflake.
+**Snowflake**: This one should print a snowflake (that doesn't look like snoflake at all, but met the assignment required output).
 
 **Sample Input**
 

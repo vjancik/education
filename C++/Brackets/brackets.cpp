@@ -10,36 +10,36 @@ int main() {
 	while(c--){
 		string s;
 		string::iterator is;
-		stack<char> pole;
+		stack<char> field;
 		cin>>s;
 		if (s.size()%2!=0){
-			cout<<"NIE"<<endl;
+			cout<<"NO"<<endl;
 			continue;
 		}
 		for(is=s.begin();is!=s.end();++is){
 			if(*is=='{'||*is=='['||*is=='(') {
-				pole.push(*is);
+				field.push(*is);
 			}
-			else if(!pole.empty()){
-				if(*is=='}'&&pole.top()=='{') pole.pop();
-				else if(*is==']'&&pole.top()=='[') pole.pop();
-				else if(*is==')'&&pole.top()=='(') pole.pop();
+			else if(!field.empty()){
+				if(*is=='}'&&field.top()=='{') field.pop();
+				else if(*is==']'&&field.top()=='[') field.pop();
+				else if(*is==')'&&field.top()=='(') field.pop();
 				else {
-					cout<<"NIE"<<endl;
+					cout<<"NO"<<endl;
 					break;
 				}
 			}
 			else{
-				cout<<"NIE"<<endl;
+				cout<<"NO"<<endl;
 				break;
 			}
 		}
 		if(is==s.end()){
-			if(pole.empty()){
-				cout<<"ANO"<<endl;
+			if(field.empty()){
+				cout<<"YES"<<endl;
 			}
 			else{
-				cout<<"NIE"<<endl;
+				cout<<"NO"<<endl;
 			}
 		}
 	}

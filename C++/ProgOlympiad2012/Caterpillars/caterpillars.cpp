@@ -6,15 +6,15 @@
 
 using namespace std;
 
-class bod{
+class point{
 public:
-	bool druhy;
+	bool second;
 	int x,y;
-	bod(int xx, int yy) {x=xx; y=yy; druhy=1;}
+	point(int xx, int yy) {x=xx; y=yy; second=1;}
 };
-multimap<float,bod> kruznica;
+multimap<float,point> circle;
 unsigned int I=0,maxI;
-bod maxIpos(0,0);
+point maxIpos(0,0);
 
 int main(){
 	unsigned int n;
@@ -27,39 +27,39 @@ int main(){
 		result2=atan2(y2,x2)*180/PI;
 		if(result1<0)result1+=360;
 		if(result2<0)result2+=360;
-		bod Bod(x1,y1);
-		bod Bod2(x2,y2);
+		point point(x1,y1);
+		point point2(x2,y2);
 		if(result1>(result2+180)||result2>(result1+180)){
 			if(result1>result2){
-				Bod.druhy=0;
-				kruznica.insert(pair<float,bod>(result1,Bod));
-				kruznica.insert(pair<float,bod>(result2,Bod2));
+				point.second=0;
+				circle.insert(pair<float,point>(result1,point));
+				circle.insert(pair<float,point>(result2,point2));
 				++I;
 			}
 			else{
-				Bod2.druhy=0;
-				kruznica.insert(pair<float,bod>(result2,Bod2));
-				kruznica.insert(pair<float,bod>(result1,Bod));
+				point2.second=0;
+				circle.insert(pair<float,point>(result2,point2));
+				circle.insert(pair<float,point>(result1,point));
 				++I;
 			}
 		}
 		else{
 			if(result1>result2){
-				Bod2.druhy=0;
-				kruznica.insert(pair<float,bod>(result2,Bod2));
-				kruznica.insert(pair<float,bod>(result1,Bod));
+				point2.second=0;
+				circle.insert(pair<float,point>(result2,point2));
+				circle.insert(pair<float,point>(result1,point));
 			}
 			else{
-				Bod.druhy=0;
-				kruznica.insert(pair<float,bod>(result1,Bod));
-				kruznica.insert(pair<float,bod>(result2,Bod2));
+				point.second=0;
+				circle.insert(pair<float,point>(result1,point));
+				circle.insert(pair<float,point>(result2,point2));
 			}
 		}
 	}
 	maxI=I;
-	multimap<float,bod>::iterator it;
-	for(it=kruznica.begin();it!=kruznica.end();++it){
-		if(it->second.druhy==0){
+	multimap<float,point>::iterator it;
+	for(it=circle.begin();it!=circle.end();++it){
+		if(it->second.second==0){
 			++I;
 		}
 		else {

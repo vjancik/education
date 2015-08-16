@@ -24,9 +24,9 @@ int main(){
 	return 0;
 }*/
 
-// PRVA CAST - END
+// FIRST PART - END
 
-// DRUHA CAST
+// SECOND PART
 
 /*const int n=5;
 int A[n] = {1,2,-367,1,8};

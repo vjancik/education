@@ -11,10 +11,10 @@ int main(){
     string input;
     while(1){
         cout<<"3 options:\n(1)Encrypt the file decrypted.txt.\n(2)Decrypt the file encrypted.txt and display it's contents.\n(3)Write something into the file decrypted.\n(4)End program."<<endl;
-        int moznost;
-        cin>>moznost;
+        int option;
+        cin>>option;
         cout<<endl;
-        switch((int)moznost){
+        switch((int)option){
             case 1:
                 decrypted.open("decrypted.txt",ios::in);
                 encrypted.open("encrypted.txt",ios::out | ios::trunc);
